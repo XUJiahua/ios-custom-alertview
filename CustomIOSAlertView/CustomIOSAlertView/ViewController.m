@@ -43,9 +43,8 @@
 
     // Add some custom content to the alert view
 //    [alertView setContainerView:[self createDemoView]];
-    
+    [alertView setIcon:[UIImage imageNamed:@"WeChat"]];
     [alertView setTitle:@"请耐心等待"];
-    
     [alertView setSubTitle:@"服务器故障"];
 
     // Modify the parameters

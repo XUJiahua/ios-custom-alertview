@@ -13,6 +13,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+colorWithHex.h"
 
+// screen size
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -20,26 +21,35 @@
 #define kCustomIOSAlertViewDefaultLeading kScreenWidth*0.05
 #define kCustomIOSAlertViewDefaultTrailing kScreenWidth*0.05
 
-#define kCustomIOSAlertViewDefaultTitleTop       kScreenHeight*0.025
-#define kCustomIOSAlertViewDefaultTitleBottom       kScreenHeight*0.025
+#define kCustomIOSAlertViewDefaultVerticalSpace kScreenHeight*0.02
+
+// for title style
+#define kCustomIOSAlertViewDefaultTitleTop       kCustomIOSAlertViewDefaultVerticalSpace
+#define kCustomIOSAlertViewDefaultTitleBottom       kCustomIOSAlertViewDefaultVerticalSpace
 #define kCustomIOSAlertViewDefaultTitleHeight        40
 
-#define kCustomIOSAlertViewDefaultSubTitleTop      kScreenHeight*0.025
-#define kCustomIOSAlertViewDefaultSubTitleBottom       kScreenHeight*0.025
+// for sub title style
+#define kCustomIOSAlertViewDefaultSubTitleTop      kCustomIOSAlertViewDefaultVerticalSpace
+#define kCustomIOSAlertViewDefaultSubTitleBottom       kCustomIOSAlertViewDefaultVerticalSpace
 #define kCustomIOSAlertViewDefaultSubTitleHeight       40
 
 // for buttons array
 #define kCustomIOSAlertViewDefaultButtonHeight       40
-#define kCustomIOSAlertViewDefaultButtonsTop kScreenHeight*0.025
-#define kCustomIOSAlertViewDefaultButtonsBottom kScreenHeight*0.025
+#define kCustomIOSAlertViewDefaultButtonsTop kCustomIOSAlertViewDefaultVerticalSpace
+#define kCustomIOSAlertViewDefaultButtonsBottom kCustomIOSAlertViewDefaultVerticalSpace
 #define kCustomIOSAlertViewDefaultButtonsSpace kScreenWidth*0.06
 
 #define kCustomIOSAlertViewCornerRadius              7
 #define kCustomIOS7MotionEffectExtent                10.0
 
+// font size
 #define kCustomTitleFontSize 18.0f
 #define kCustomSubTitleFontSize 14.0f
 #define kCustomButtonFontSize 16.0f
+
+// icon size
+#define kCustomIconWidth 40.0
+#define kCustomIconHeight 40.0
 
 @interface CustomIOSAlertView ()
 {
@@ -238,11 +248,20 @@ CGFloat buttonHeight = 0;
         containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
 
         if ((self.title !=nil && ![self.title isEqualToString:@""]) || (self.subTitle!=nil || ![self.subTitle isEqualToString:@""])) {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kCustomIOSAlertViewDefaultLeading, kCustomIOSAlertViewDefaultTitleTop, width-kCustomIOSAlertViewDefaultLeading-kCustomIOSAlertViewDefaultTrailing , kCustomIOSAlertViewDefaultTitleHeight)];
+            CGFloat posX = kCustomIOSAlertViewDefaultLeading;
+            
+            if (self.icon != nil) {
+                UIImageView *imageView = [[UIImageView alloc] initWithImage:self.icon];
+                imageView.frame = CGRectMake(posX, kCustomIOSAlertViewDefaultTitleTop, kCustomIconWidth, kCustomIconHeight);
+                posX += kCustomIconWidth + kCustomIOSAlertViewDefaultButtonsSpace;
+                [containerView addSubview:imageView];
+            }
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(posX, kCustomIOSAlertViewDefaultTitleTop, width-kCustomIOSAlertViewDefaultLeading-kCustomIOSAlertViewDefaultTrailing , kCustomIOSAlertViewDefaultTitleHeight)];
             label.text = self.title;
             [label setFont:[UIFont systemFontOfSize:kCustomTitleFontSize]];
             label.textColor = [UIColor blackColor];
-            label.textAlignment = NSTextAlignmentCenter;
+//            label.textAlignment = NSTextAlignmentCenter;
             
             [containerView addSubview:label];
         }
