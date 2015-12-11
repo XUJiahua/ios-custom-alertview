@@ -42,11 +42,14 @@
     CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
 
     // Add some custom content to the alert view
-    [alertView setContainerView:[self createDemoView]];
+//    [alertView setContainerView:[self createDemoView]];
+    
+    [alertView setTitle:@"请耐心等待"];
+    
+    [alertView setSubTitle:@"服务器故障"];
 
     // Modify the parameters
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Close1", @"Close2", @"Close3", nil]];
-    [alertView setDelegate:self];
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"关闭订单", @"顾客已付款", nil]];
     
     // You may use a Block, rather than a delegate.
     [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
@@ -60,19 +63,15 @@
     [alertView show];
 }
 
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOSAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
-{
-    NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
-    [alertView close];
-}
 
 - (UIView *)createDemoView
 {
-    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 200)];
-
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 270, 180)];
-    [imageView setImage:[UIImage imageNamed:@"demo"]];
-    [demoView addSubview:imageView];
+    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 100)];
+    
+//    demoView.backgroundColor = [UIColor whiteColor];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 270, 180)];
+//    [imageView setImage:[UIImage imageNamed:@"demo"]];
+//    [demoView addSubview:imageView];
 
     return demoView;
 }

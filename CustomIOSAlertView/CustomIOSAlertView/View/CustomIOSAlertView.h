@@ -25,7 +25,17 @@
 
 @property (nonatomic, assign) id<CustomIOSAlertViewDelegate> delegate;
 @property (nonatomic, retain) NSArray *buttonTitles;
+
+// customize for cardinfolink
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *subTitle;
+@property (nonatomic, strong) UIImage *icon;
+
 @property (nonatomic, assign) BOOL useMotionEffects;
+
+// exposed for customize style
+@property (nonatomic, strong, readonly) NSArray *buttons;
+
 
 @property (copy) void (^onButtonTouchUpInside)(CustomIOSAlertView *alertView, int buttonIndex) ;
 
@@ -40,6 +50,7 @@
 - (void)close;
 
 - (IBAction)customIOS7dialogButtonTouchUpInside:(id)sender;
+
 - (void)setOnButtonTouchUpInside:(void (^)(CustomIOSAlertView *alertView, int buttonIndex))onButtonTouchUpInside;
 
 - (void)deviceOrientationDidChange: (NSNotification *)notification;
