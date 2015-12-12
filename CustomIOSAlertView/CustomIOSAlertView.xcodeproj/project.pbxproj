@@ -19,6 +19,7 @@
 		5EE9A9BB17EC68960031B75E /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9A9BA17EC68960031B75E /* CustomIOSAlertView.m */; };
 		5EE9A9BE17EC7EA60031B75E /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EE9A9BD17EC7EA60031B75E /* demo.png */; };
 		CADC818F1C1A70E900FBA245 /* UIColor+colorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = CADC818E1C1A70E900FBA245 /* UIColor+colorWithHex.m */; };
+		CADC81921C1AA63700FBA245 /* UILabel+DynamicHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CADC81911C1AA63700FBA245 /* UILabel+DynamicHeight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		5EE9A9BD17EC7EA60031B75E /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		CADC818D1C1A70E900FBA245 /* UIColor+colorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+colorWithHex.h"; sourceTree = "<group>"; };
 		CADC818E1C1A70E900FBA245 /* UIColor+colorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+colorWithHex.m"; sourceTree = "<group>"; };
+		CADC81901C1AA63700FBA245 /* UILabel+DynamicHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DynamicHeight.h"; sourceTree = "<group>"; };
+		CADC81911C1AA63700FBA245 /* UILabel+DynamicHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DynamicHeight.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				CADC818E1C1A70E900FBA245 /* UIColor+colorWithHex.m */,
 				5EE9A9B917EC68960031B75E /* CustomIOSAlertView.h */,
 				5EE9A9BA17EC68960031B75E /* CustomIOSAlertView.m */,
+				CADC81901C1AA63700FBA245 /* UILabel+DynamicHeight.h */,
+				CADC81911C1AA63700FBA245 /* UILabel+DynamicHeight.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				5EE9A9BB17EC68960031B75E /* CustomIOSAlertView.m in Sources */,
 				5EB26CE417EC5EEB00F0971C /* ViewController.m in Sources */,
 				5EB26CDB17EC5EEB00F0971C /* AppDelegate.m in Sources */,
+				CADC81921C1AA63700FBA245 /* UILabel+DynamicHeight.m in Sources */,
 				CADC818F1C1A70E900FBA245 /* UIColor+colorWithHex.m in Sources */,
 				5EB26CD717EC5EEB00F0971C /* main.m in Sources */,
 			);
